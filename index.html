@@ -33,9 +33,9 @@
         </div>
 
         <div class="header-group2">
-            <input type="text" id="" name="" placeholder="search greens, bread" class="search-input">
+            <input type="search" id="product-search" name="search" placeholder="search greens, bread" class="search-input">
             <a href="#" class="login-link" >Login</a>
-            <button class="basket-button">Basket -3</button>
+            <button class="basket-button" id="basket-button">Basket <span id="basket-count">0</span></button>
         </div>
     </header>
 
@@ -57,8 +57,8 @@
         <p class="hero-paragraph">Picked at dawn from 42 family farms, packed without plastic, and delivered to your door in under 4 hours. Fresher than the market, easier than the list</p>
 
         <div class="hero-input-group">
-            <input type="text" placeholder="Enter Zip . e.g. 11215">
-            <button>Shop fresh</button>
+            <input type="text" id="zip-code" placeholder="Enter Zip . e.g. 11215" aria-label="Enter your delivery ZIP code">
+            <button type="button" id="shop-fresh">Shop fresh</button>
         </div>
 
         <div class="ratings">
@@ -69,6 +69,7 @@
                      <div class="avatar-3"></div>
                 </div>
 
+                <p id="delivery-message" aria-live="polite"></p>
                 <p>28k happy neighbour</p>
                 </div>
             
@@ -137,7 +138,7 @@
                 <img src="assets/milk.jpg" alt="">
                 <div class="aisles-card-content">
                     <h4 class="card-name">Produce</h4>
-                    <p class="card-stock">124 items</p>
+                    <p class="card-stock">224 items</p>
                 </div>
             </div>
 
@@ -145,7 +146,7 @@
                 <img src="assets/vegetables.jpg" alt="">
                 <div class="aisles-card-content">
                     <h4 class="card-name">Produce</h4>
-                    <p class="card-stock">124 items</p>
+                    <p class="card-stock">104 items</p>
                 </div>
             </div>
 
@@ -153,7 +154,7 @@
                 <img src="assets/jar.jpg" alt="">
                 <div class="aisles-card-content">
                     <h4 class="card-name">Produce</h4>
-                    <p class="card-stock">124 items</p>
+                    <p class="card-stock">500 items</p>
                 </div>
             </div>
 
@@ -161,7 +162,7 @@
                 <img src="assets/flower.jpg" alt="">
                 <div class="aisles-card-content">
                     <h4 class="card-name">Produce</h4>
-                    <p class="card-stock">124 items</p>
+                    <p class="card-stock">407 items</p>
                 </div>
             </div>
 
@@ -169,7 +170,7 @@
                 <img src="assets/salmon.jpg" alt="">
                 <div class="aisles-card-content">
                     <h4 class="card-name">Produce</h4>
-                    <p class="card-stock">124 items</p>
+                    <p class="card-stock">1 items</p>
                 </div>
             </div>
 
@@ -225,16 +226,15 @@
             </div>
             
             <div class="cart-link">
-                <a href="" class="cart-links-items">All</a>
-                <a href="" class="cart-links-items">Veggies</a>
-                <a href="" class="cart-links-items">Battery</a>
-                <a href="" class="cart-links-items">Diary</a>
+                <button type="button" class="cart-links-items active" data-filter="all">All</button>
+                <button type="button" class="cart-links-items" data-filter="veggies">Veggies</button>
+                <button type="button" class="cart-links-items" data-filter="bakery">Bakery</button>
+                <button type="button" class="cart-links-items" data-filter="others">Others</button>
             </div>
-
         </div>
 
         <div class="cart-wrapper">
-            <div class="cart-card">
+            <div class="cart-card" data-category="veggies">
                 <img src="assets/veg.png" alt="">
                 <div class="card-content">
                     <p>picked today</p>
@@ -246,14 +246,15 @@
                     <div class="add-cart">
                         <h6>$4.20/lb</h6>
 
-                        <div>
-                            <span><i class="ph ph-plus cartcon"></i></span>
-                        </div>
+                        <button type="button" class="add-to-cart" data-name="Heirloom Tomatoes" data-price="4.20" aria-label="Add Heirloom Tomatoes to basket">
+                            <i class="ph ph-plus cartcon"></i>
+                        </button>
+
                     </div>
                 </div>
             </div>
 
-            <div class="cart-card">
+            <div class="cart-card" data-category="bakery">
                 <img src="assets/bread.png" alt="">
                 <div class="card-content">
                     <p>Baked today</p>
@@ -265,33 +266,34 @@
                      <div class="add-cart">
                         <h6>$7.20/lb</h6>
 
-                        <div>
-                            <span><i class="ph ph-plus cartcon"></i></span>
-                        </div>
+                       <button type="button" class="add-to-cart" data-name="Sourdough Loaf" data-price="7.20" aria-label="Add Sourdough Loaf to basket">
+                            <i class="ph ph-plus cartcon"></i>
+                        </button>
+
                     </div>
                 </div>
             </div>
 
-            <div class="cart-card">
+            <div class="cart-card" data-category="others">
                 <img src="assets/egg.png" alt="">
                  <div class="card-content">
                     <p>Pasture raised</p>
                 </div>
                 <div class="cart-card-content">
-                    <h4 class="card-name">Pasture Eggs, dozen</h4>
+                    <h4 class="card-name">Pasture Eggs</h4>
                     <p class="card-stock">124 items</p>
 
                      <div class="add-cart">
                         <h6>$4.90/lb</h6>
 
-                        <div>
-                            <span><i class="ph ph-plus cartcon"></i></span>
-                        </div>
+                        <button type="button" class="add-to-cart" data-name="Pasture Eggs" data-price="4.90" aria-label="Add Pasture Eggs to basket">
+                            <i class="ph ph-plus cartcon"></i>
+                        </button>
                     </div>
                 </div>
             </div>    
 
-            <div class="cart-card">
+            <div class="cart-card" data-category="others">
                 <img src="assets/honey.png" alt="">
                  <div class="card-content">
                     <p>small batch</p>
@@ -301,15 +303,51 @@
                     <p class="card-stock">124 items</p>
 
                      <div class="add-cart">
-                        <h6>$2.20/lb</h6>
+                        <h6>$5.00/lb</h6>
 
-                        <div>
-                            <span><i class="ph ph-plus cartcon"></i></span>
-                        </div>
+                         <button type="button" class="add-to-cart" data-name="Wildflower Honey" data-price="5.00" aria-label="Add Wildflower Honey to basket">
+                            <i class="ph ph-plus cartcon"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="basket-overlay" id="basket-overlay"></div>
+
+        <aside
+            class="basket-panel"
+            id="basket-panel"
+            aria-labelledby="basket-title"
+            aria-hidden="true"
+        >
+            <div class="basket-panel-header">
+                <h2 id="basket-title">Your Basket</h2>
+
+                <button
+                    type="button"
+                    id="close-basket"
+                    aria-label="Close basket"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <div class="basket-items" id="basket-items">
+                <p class="empty-basket">Your basket is empty.</p>
+            </div>
+
+            <div class="basket-footer">
+                <div class="basket-subtotal">
+                    <span>Subtotal</span>
+                    <strong id="basket-subtotal">$0.00</strong>
+                </div>
+
+                <button type="button" id="checkout-button">
+                    Continue to Checkout
+                </button>
+            </div>
+        </aside>
 
         <div class="cart-group">
             <div class="cart-group1">
@@ -346,14 +384,12 @@
                  </div>
                 </div>
 
-
                 <div class="cart-group2-img">
                 <img src="assets/qrcode.png" alt="">
                 <p>Scan to download</p>
 
                 </div>
             
-
             </div>
         </div>
      </section>
@@ -404,8 +440,7 @@
 
     </footer>
 
-
-    
+    <script src="index.js"></script>
     
 </body>
 </html>

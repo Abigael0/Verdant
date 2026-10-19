@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Verdant</title>
+
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+    <header class="checkout-header">
+        <a href="index.html" class="logo">Verdant</a>
+        <p>Secure Checkout</p>
+    </header>
+
+    <main class="checkout-container">
+
+        <section class="checkout-form-section">
+
+            <h1>Complete your order</h1>
+            <p>Enter your details for delivery.</p>
+
+            <form id="checkout-form">
+
+                <label for="customer-name">Full Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customerName"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="customer-email">Email Address</label>
+                <input
+                    type="email"
+                    id="customer-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="customer-phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    name="phone"
+                    autocomplete="tel"
+                    required
+                >
+
+                <label for="delivery-address">Delivery Address</label>
+                <textarea
+                    id="delivery-address"
+                    name="address"
+                    autocomplete="street-address"
+                    rows="3"
+                    required
+                ></textarea>
+
+                <label for="delivery-notes">
+                    Delivery Instructions (Optional)
+                </label>
+
+                <textarea
+                    id="delivery-notes"
+                    name="notes"
+                    rows="2"
+                ></textarea>
+
+                <button type="submit" id="place-order-button">
+                    Place Order
+                </button>
+
+            </form>
+
+            <p id="checkout-message" aria-live="polite"></p>
+
+        </section>
+
+        <aside class="order-summary">
+
+            <h2>Your Order</h2>
+
+            <div id="checkout-items">
+                <p>Loading your basket...</p>
+            </div>
+
+            <div class="total-row">
+                <span>Subtotal</span>
+                <strong id="checkout-subtotal">$0.00</strong>
+            </div>
+
+            <p class="checkout-note">
+                Delivery fees and final charges may apply.
+            </p>
+
+            <a href="index.html" class="back-to-shop">
+                ← Continue Shopping
+            </a>
+
+        </aside>
+    </main>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>
