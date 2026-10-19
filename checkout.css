@@ -160,3 +160,38 @@ body {
         padding: 20px;
     }
 }
+
+@media (max-width: 480px) {
+    .checkout-header {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .checkout-header p {
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .checkout-container {
+        gap: 28px;
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .checkout-form-section h1 {
+        font-size: 26px;
+    }
+
+    .order-summary {
+        padding: 20px;
+    }
+
+    .checkout-item {
+        gap: 10px;
+        overflow-wrap: anywhere;
+    }
+}
